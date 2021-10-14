@@ -1,0 +1,15 @@
+@mixin valores-repetidos {
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+}
+
+@mixin valores-repetidos2 {
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin animaciones {
+    animation-name: strip--u4rx9pg;
+    animation-timing-function: ease-out;
+}
