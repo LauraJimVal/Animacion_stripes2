@@ -1,0 +1,130 @@
+@import 'componentes/variables','componentes/mixins';
+
+/* general */
+
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: $medida;
+    font-weight: $grosor;
+    color: $blanco;
+    font-family: $familia;
+}
+
+/* strips */
+
+.strips{
+    height: $alto;
+    width: 100vw;
+    @include valores-repetidos;
+    cursor: pointer;
+        .strip{
+            position: relative;
+            width: 19.9vh;
+            margin: 0.1;
+            height: $alto;
+            @include valores-repetidos;
+            @include valores-repetidos2;
+                .strip_content{
+                    display: flex;
+                    @include valores-repetidos2;
+                    position: absolute;
+                    height: $alto;
+                    width: $ancho;
+                    text-align: center;
+                }
+        }
+}
+
+/* before */
+.strips .strip_content {
+    :before{
+        content:"";
+        display: flex;
+        @include valores-repetidos2;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 20vw;
+        height: $alto;
+        background: $blanco;
+        opacity: 0.05;
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-transform: skew(30deg) scaleY(1) translate(0, 0);
+        transform: skew(30deg) scaleY(1) translate(0, 0);
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        overflow: $escondido;
+    }
+    :hover:before{
+        -webkit-transform: skew(0deg) scaleX(2) translate(0, 0);
+        transform: skew(0deg) scaleX(2) translate(0, 0);
+        opacity: 0.2;
+    }
+    
+}
+
+/* strips 1-5: nth-child 1-5 */
+
+.strip:nth-child(1) .strip_content {
+    background-color: $azul;
+    @include animaciones;
+    animation-duration: 0.5s;
+}
+
+@keyframes u4rx9pe {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.strip:nth-child(2) .strip_content {
+    background-color: $turquesa;
+    @include animaciones;
+    animation-duration: 0.8s;
+}
+
+@keyframes strip--u4rx9pg {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.strip:nth-child(3) .strip_content {
+    background-color: $lila;
+    @include animaciones;
+    animation-duration: 0.7s;
+}
+
+@keyframes strip--u4rx9q8 {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.strip:nth-child(4) .strip_content {
+    background-color: $amarillo;
+    @include animaciones;
+    animation-duration: 1s;
+}
+
+@keyframes strip--u4rx9qn {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.strip:nth-child(5) .strip_content {
+    background-color: $rojo;
+    @include animaciones;
+    animation-duration: 1.1s;
+}
+
+@keyframes strip--u4rx9r0 {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+}
